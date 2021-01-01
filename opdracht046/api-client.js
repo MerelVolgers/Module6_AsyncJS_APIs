@@ -49,3 +49,41 @@ const getTopRatedMovies = async () => {
     }
 }
 
+// get top rated movies in year 1988:
+
+const getTopRatedMoviesInYearX = async () => {
+    const apiURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_average.desc&vote_count.gte=2000&primary_release_year=1990`;
+    try {
+        const res = await fetch (apiURL, {method: "GET"});
+        const data = await res.json();
+        return data;
+    } catch (eror){
+        console.log(error)
+    }
+}
+
+// get top rated Action movies:
+
+const getTopRatedActionMovies = async () => {
+    const apiURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_average.desc&vote_count.gte=2000&with_genres=28`;
+    try {
+        const res = await fetch (apiURL, {method: "GET"});
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// get list of movies in year 1975:
+
+const getListOfMovies = async () => {
+    const apiURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_average.desc&primary_release_year=1975&vote_count.gte=500`;
+    try {
+        const res = await fetch (apiURL, {method: "GET"});
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
