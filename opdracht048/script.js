@@ -24,8 +24,8 @@ button.addEventListener("click", () =>{
         alert ("It takes two to tango! Put in two names to calculate your compatibility");
     } else {
         getLoveCalculator().then (data => {
-            const berekendPercentage = document.createTextNode(`Percentage: ${sname} `);
-            const berekendAdvies = document.createTextNode(`Advies: ${fname}`);
+            const berekendPercentage = document.createTextNode(`Percentage: ${data.percentage} % `);
+            const berekendAdvies = document.createTextNode(`Advies: ${data.result}`);
             resultaat.append(berekendPercentage);
             resultaat.append(berekendAdvies);
         })

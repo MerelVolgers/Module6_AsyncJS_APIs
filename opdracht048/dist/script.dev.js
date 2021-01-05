@@ -19,8 +19,8 @@ button.addEventListener("click", function () {
     alert("It takes two to tango! Put in two names to calculate your compatibility");
   } else {
     getLoveCalculator().then(function (data) {
-      var berekendPercentage = document.createTextNode("Percentage: ".concat(sname, " "));
-      var berekendAdvies = document.createTextNode("Advies: ".concat(fname));
+      var berekendPercentage = document.createTextNode("Percentage: ".concat(data.percentage, " % "));
+      var berekendAdvies = document.createTextNode("Advies: ".concat(data.result));
       resultaat.append(berekendPercentage);
       resultaat.append(berekendAdvies);
     });
