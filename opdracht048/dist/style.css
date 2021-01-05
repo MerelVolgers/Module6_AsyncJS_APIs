@@ -1,3 +1,61 @@
 body {
-  font-size: large;
+  display: grid;
+  grid-template-columns: 10px auto 10px;
+  grid-template-rows: 150px auto 100px;
+  grid-template-areas: " . h ." " . m ." " . f . ";
+  background-image: url(01-01.jpg);
+  background-repeat: repeat;
+  color: #c7114e;
+  text-align: center;
+}
+body header {
+  grid-area: h;
+}
+body header h1 {
+  background-color: white;
+  border-radius: 40%;
+  padding: 10px;
+  margin: 40px;
+}
+body main {
+  grid-area: m;
+}
+body main button {
+  color: #e78d8d;
+  border-color: #c7114e;
+  background-color: #c7114e;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 50%;
+}
+body main input {
+  color: #c7114e;
+  border-color: #c7114e;
+  border-radius: 70%;
+  margin: 10px;
+  padding: 30px;
+}
+body main h1 {
+  background: white;
+}
+body main div.resultaten {
+  font-size: 30px;
+  background-color: white;
+  border-radius: 50%;
+  border-color: #c7114e;
+  border: 2px solid;
+  padding: 10px;
+  margin: 20px;
+}
+body footer {
+  grid-area: f;
+  font-size: 15px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 70%;
+  margin: 20px;
+}
+body footer a {
+  color: #c7114e;
+  font-size: 20px;
 }

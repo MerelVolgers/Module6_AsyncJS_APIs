@@ -29,21 +29,20 @@ var getLoveCalculator = function getLoveCalculator() {
 
         case 7:
           data = _context.sent;
-          console.log(data);
           return _context.abrupt("return", data);
 
-        case 12:
-          _context.prev = 12;
+        case 11:
+          _context.prev = 11;
           _context.t0 = _context["catch"](1);
 
           (function (error) {
             return console.log(error);
           });
 
-        case 15:
+        case 14:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[1, 12]]);
+  }, null, null, [[1, 11]]);
 };
