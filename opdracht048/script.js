@@ -1,5 +1,5 @@
-// let firstName = "merel";
-// let secondName = "piet";
+// let firstName = "";
+// let secondName = "";
 
 const button = document.getElementById("button");
 const putFirstName = document.getElementById("firstName");
@@ -7,30 +7,28 @@ const putSecondName = document.getElementById("secondName");
 const resultaat = document.getElementById("resultaat");
 
 
-const input = () => {
-    putFirstName.addEventListener('keyup', (event) => {
-        firstName = event.target.value
-    });
+putFirstName.addEventListener('keyup', (event) => {
+    fname = event.target.value
+});
     
-    putSecondName.addEventListener('keyup', (event) => {
-        secondName = event.target.value
-    });
-}
+putSecondName.addEventListener('keyup', (event) => {
+    sname = event.target.value
+});
 
 
 button.addEventListener("click", () =>{
     const data = getLoveCalculator();
     resultaat.innerHTML="";
 
-    if (firstName.value !== "" && secondName.value !== "") {
-    getLoveCalculator().then (data => {
-            const berekendPercentage = document.createTextNode(`Percentage: ${data}`);
-            // const berekendAdvies = document.createElement(`Advies: ${data}`);
-            resultaat.append(berekendPercentage);
-            // resultaat.append(berekendAdvies);
-        })
+    if (firstName.value == "" || secondName.value == "") {
+        alert ("It takes two to tango!");
     } else {
-        alert ("You need to enter two names!");
+        getLoveCalculator().then (data => {
+            const berekendPercentage = document.createTextNode(`Percentage: ${result_percentage} `);
+            const berekendAdvies = document.createTextNode(`Advies: ${data}`);
+            resultaat.append(berekendPercentage);
+            resultaat.append(berekendAdvies);
+        })
     }
 })
 
