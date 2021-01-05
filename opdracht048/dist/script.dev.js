@@ -1,7 +1,5 @@
 "use strict";
 
-// let firstName = "";
-// let secondName = "";
 var button = document.getElementById("button");
 var putFirstName = document.getElementById("firstName");
 var putSecondName = document.getElementById("secondName");
@@ -14,14 +12,15 @@ putSecondName.addEventListener('keyup', function (event) {
 });
 button.addEventListener("click", function () {
   var data = getLoveCalculator();
+  console.log(data);
   resultaat.innerHTML = "";
 
-  if (firstName.value == "" || secondName.value == "") {
-    alert("It takes two to tango!");
+  if (putFirstName.value == "" || putSecondName.value == "") {
+    alert("It takes two to tango! Put in two names to calculate your compatibility");
   } else {
     getLoveCalculator().then(function (data) {
-      var berekendPercentage = document.createTextNode("Percentage: ".concat(result_percentage, " "));
-      var berekendAdvies = document.createTextNode("Advies: ".concat(data));
+      var berekendPercentage = document.createTextNode("Percentage: ".concat(sname, " "));
+      var berekendAdvies = document.createTextNode("Advies: ".concat(fname));
       resultaat.append(berekendPercentage);
       resultaat.append(berekendAdvies);
     });

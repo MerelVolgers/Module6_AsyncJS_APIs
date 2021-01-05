@@ -1,11 +1,11 @@
 "use strict";
 
 // API_KEY = "6d6cd94d90msh6f30ecbf3ea95e4p18d12djsn7f5f499c19d9";
-var fname = "merel";
-var sname = "peter";
+var fname = "";
+var sname = "";
 
-var getLoveCalculator = function getLoveCalculator(fname, sname) {
-  var apiURL, response;
+var getLoveCalculator = function getLoveCalculator() {
+  var apiURL, response, data;
   return regeneratorRuntime.async(function getLoveCalculator$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -20,29 +20,30 @@ var getLoveCalculator = function getLoveCalculator(fname, sname) {
               "X-RapidApi-Host": "love-calculator.p.rapidapi.com"
             },
             redirect: "follow"
-          }).then(function (response) {
-            return response.text();
-          }).then(function (result) {
-            return console.log(result);
           }));
 
         case 4:
           response = _context.sent;
-          _context.next = 10;
-          break;
+          _context.next = 7;
+          return regeneratorRuntime.awrap(response.json());
 
         case 7:
-          _context.prev = 7;
+          data = _context.sent;
+          console.log(data);
+          return _context.abrupt("return", data);
+
+        case 12:
+          _context.prev = 12;
           _context.t0 = _context["catch"](1);
 
           (function (error) {
             return console.log(error);
           });
 
-        case 10:
+        case 15:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[1, 7]]);
+  }, null, null, [[1, 12]]);
 };

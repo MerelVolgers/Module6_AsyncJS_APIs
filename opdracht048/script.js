@@ -1,5 +1,4 @@
-// let firstName = "";
-// let secondName = "";
+
 
 const button = document.getElementById("button");
 const putFirstName = document.getElementById("firstName");
@@ -18,18 +17,21 @@ putSecondName.addEventListener('keyup', (event) => {
 
 button.addEventListener("click", () =>{
     const data = getLoveCalculator();
+    console.log(data);
     resultaat.innerHTML="";
 
-    if (firstName.value == "" || secondName.value == "") {
-        alert ("It takes two to tango!");
+    if (putFirstName.value == "" || putSecondName.value == "") {
+        alert ("It takes two to tango! Put in two names to calculate your compatibility");
     } else {
         getLoveCalculator().then (data => {
-            const berekendPercentage = document.createTextNode(`Percentage: ${result_percentage} `);
-            const berekendAdvies = document.createTextNode(`Advies: ${data}`);
+            const berekendPercentage = document.createTextNode(`Percentage: ${sname} `);
+            const berekendAdvies = document.createTextNode(`Advies: ${fname}`);
             resultaat.append(berekendPercentage);
             resultaat.append(berekendAdvies);
         })
     }
 })
+
+
 
 
